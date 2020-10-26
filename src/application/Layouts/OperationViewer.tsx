@@ -81,14 +81,14 @@ const queryDataMain = css`
   font-size: ${rem(15)};
 `;
 
-enum QueryTabs {
+enum OperationTabs {
   Variables,
   CachedData
 }
 
-export const QueryViewer = ({ queryString = '', variables = {}, cachedData = {} }) => {
-  const [currentTab, setCurrentTab] = useState<QueryTabs>(QueryTabs.Variables);
-  const copyCurrentTab = `${stringifyObject(currentTab === QueryTabs.Variables ? variables : cachedData)}`;
+export const OperationViewer = ({ queryString = '', variables = {}, cachedData = {} }) => {
+  const [currentTab, setCurrentTab] = useState<OperationTabs>(OperationTabs.Variables);
+  const copyCurrentTab = `${stringifyObject(currentTab === OperationTabs.Variables ? variables : cachedData)}`;
 
   return (
     <div css={queryViewStyles}>
